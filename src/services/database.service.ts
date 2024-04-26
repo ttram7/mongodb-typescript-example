@@ -6,7 +6,7 @@ import * as dotenv from "dotenv";
 // to access collection outside of service
 export const collections: { cities?: mongoDB.Collection } = {}
 
-// Initialize Connection
+// Initialize Connection - functionality that communicates to db
 export async function connectToDatabase () {
     dotenv.config(); // pulls in .env file so values can be accessed
 
