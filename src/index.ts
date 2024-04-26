@@ -31,4 +31,4 @@ connectToDatabase()
 //     console.log(`server started at http://localhost:${port}`);
 
     // ** TODO ** Call to Game Service to initiate connection
-});
+

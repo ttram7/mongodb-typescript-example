@@ -24,6 +24,19 @@ citiesRouter.get("/", async (_req: Request, res: Response) => {
 });
 
 // POST
+citiesRouter.post("/", async (req: Request, res: Response) => {
+    try {
+        const newCity = req.body as City;
+        const result = await collections.cities.insertOne(newCity);
+
+        result
+            ? res.status(201).send(`Successfully created a new city with id ${result.insertedId}`)
+            : res.status(500).send("Failed to create a new city.");
+    } catch (error) {
+        console.error(error);
+        res.status(400).send(error.message);
+    }
+});
 
 // PUT
 
